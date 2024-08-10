@@ -18,12 +18,12 @@ error FundMe__NotOwner();
 contract FundMe {
     // Type Declarations
     using PriceConverter for uint256;
-
     // State variables
-    uint256 public constant MINIMUM_USD = 5 * 10 ** 18;
-    address private immutable i_owner;
-    address[] private s_funders;
     mapping(address => uint256) private s_addressToAmountFunded;
+    address[] private s_funders;
+
+    address private immutable i_owner;
+    uint256 public constant MINIMUM_USD = 5 * 10 ** 18;
     AggregatorV3Interface private s_priceFeed;
 
     // Events (we have none!)
